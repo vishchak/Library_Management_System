@@ -52,6 +52,9 @@ if (!isset($_SESSION['user_email']) || empty($_SESSION['user_email']) || $_SESSI
 
                 <li class="nav-item active"><a class="nav-link" href="admin.php">Admin <span
                                 class="sr-only">(current)</span></a></li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="../logout.php">Logout</a>
+                </li>
             </ul>
         </div>
     </nav>

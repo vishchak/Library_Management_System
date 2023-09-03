@@ -55,7 +55,11 @@ if (!isset($_SESSION['user_email']) || empty($_SESSION['user_email'])) {
                     echo '<li class="nav-item"><a class="nav-link" href="adminfunctionality/admin.php">Admin</a></li>';
                 }
                 ?>
+                <li class="nav-item ">
+                    <a class="nav-link" href="logout.php">Logout</a>
+                </li>
             </ul>
+
         </div>
     </nav>
 </div>
