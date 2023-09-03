@@ -3,7 +3,7 @@
 session_start();
 
 // Check if the user is not logged in, redirect to login page
-if (!isset($_SESSION['user_email']) || empty($_SESSION['user_email'])) {
+if (!isset($_SESSION['user_email']) || empty($_SESSION['user_email']) || $_SESSION['user_type'] !== 'Admin') {
     header("Location: ../auth/login.php");
     exit();
 } ?>
@@ -24,7 +24,7 @@ if (!isset($_SESSION['user_email']) || empty($_SESSION['user_email'])) {
     <link rel="stylesheet" href="../custom.css">
 
 
-    <title>Catalog - Library Management System</title>
+    <title>Admin - Library Management System</title>
 </head>
 <body>
 <div class="text-center text-lg-center" style="background-color:#181725; color: #fefefe">
@@ -46,16 +46,12 @@ if (!isset($_SESSION['user_email']) || empty($_SESSION['user_email'])) {
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="browse_borrow.php">Catalog <span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                    <a class="nav-link" href="../userfunctionality/browse_borrow.php">Catalog</span></a>
                 </li>
-                <?php
-                // Check if the user is an admin (MemberType equals "Admin")
-                if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 'Admin') {
-                    echo '<li class="nav-item"><a class="nav-link" href="../adminfunctionality/admin.php">Admin</a></li>';
-                }
-                ?>
-                </li>
+
+                <li class="nav-item active"><a class="nav-link" href="admin.php">Admin <span
+                                class="sr-only">(current)</span></a></li>
             </ul>
         </div>
     </nav>
@@ -64,7 +60,7 @@ if (!isset($_SESSION['user_email']) || empty($_SESSION['user_email'])) {
 <div class="container mx-auto">
 
     <div class="container">
-        <h2 class="text-center display-4">Browse and Borrow Books</h2>
+        <h2 class="text-center display-4">Edit, Return and Delete Books</h2>
     </div>
 
     <div class="book-list">
@@ -97,17 +93,21 @@ if (!isset($_SESSION['user_email']) || empty($_SESSION['user_email'])) {
             echo '<p>Language: ' . $book['Language'] . '</p>';
             echo '<p>Category: ' . $book['Category'] . '</p>';
 
-            if ($book['Status'] == 'Onloan') {
-                echo '<p>Borrowed Date: ' . $book['AppliedDate'] . '</p>';
-                echo '<button class="btn btn-secondary mt-auto" disabled>Borrow</button>';
+            if ($book['Status'] !== 'Onloan') {
+                echo '<button class="btn btn-secondary mt-auto" disabled>Return</button>';
             } else {
+                echo '<p>Borrowed Date: ' . $book['AppliedDate'] . '</p>';
                 echo '<div class="mt-auto">';
-                echo '<form method="post" action="borrow.php" class="d-flex" >';
+                echo '<form method="post" action="return.php" class="d-flex" >';
                 echo '<input type="hidden" name="bookID" value="' . $book['BookID'] . '">';
-                echo '<button class="btn btn-primary" type="submit" >Borrow</button>';
+                echo '<button class="btn btn-primary" type="submit" >Return</button>';
                 echo '</form>';
                 echo '</div>';
             }
+
+            echo '<div class="mt-auto">';
+            echo '<a href="edit.php?bookID=' . $book['BookID'] . '" class="btn btn-info">Edit</a>';
+            echo '</div>';
 
             echo '</div>';
             echo '</div>';
