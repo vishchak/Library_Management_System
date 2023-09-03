@@ -1,5 +1,5 @@
 <?php
-require_once("../sheared/connection.php");
+require_once("../shared/connection.php");
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {

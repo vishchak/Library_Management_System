@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once("../sheared/connection.php");
+require_once("../shared/connection.php");
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Retrieve user input from the login form

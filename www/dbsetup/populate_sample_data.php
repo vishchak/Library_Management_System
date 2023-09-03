@@ -1,5 +1,5 @@
 <?php
-require_once("../sheared/connection.php");
+require_once("../shared/connection.php");
 
 // Select the "library_db" database within the existing connection
 if ($conn->select_db("library_db")) {
