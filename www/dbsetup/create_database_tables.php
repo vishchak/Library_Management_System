@@ -42,7 +42,8 @@ CREATE TABLE IF NOT EXISTS Books (
     Author VARCHAR(30) NOT NULL,
     Publisher VARCHAR(30) NOT NULL,
     Language ENUM('English', 'French', 'German', 'Mandarin', 'Japanese', 'Russian', 'Other') NOT NULL DEFAULT 'English',
-    Category ENUM('Fiction', 'Nonfiction', 'Reference') NOT NULL DEFAULT 'Fiction'
+    Category ENUM('Fiction', 'Nonfiction', 'Reference') NOT NULL DEFAULT 'Fiction',
+    BorrowCount INT NOT NULL DEFAULT 0                           
 );
 
 CREATE TABLE IF NOT EXISTS BookStatus (

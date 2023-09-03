@@ -29,6 +29,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $stmt->bind_param("ii", $bookID, $userID);
 
         if ($stmt->execute()) {
+            $updateBorrowCountQuery = "UPDATE Books SET BorrowCount = BorrowCount + 1 WHERE BookID = ?";
+            $stmt = $conn->prepare($updateBorrowCountQuery);
+            $stmt->bind_param("i", $bookID);
+            $stmt->execute();
+
             header("Location: ../userfunctionality/browse_borrow.php");
             exit();
         } else {
