@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../custom.css">
 
 
-    <title>Sign Up - Library Management System</title>
+    <title>Sign in - Library Management System</title>
 
     <script>
         <?php
@@ -59,92 +59,33 @@
 <div class="container mx-auto">
 
     <div class="container">
-        <h1 class="text-center display-4">Sign up</h1>
+        <h1 class="text-center display-4">Sign in</h1>
     </div>
 
-    <form action="sign_up_process.php" method="POST" onsubmit="return validateForm()" novalidate>
+    <form action="login_process.php" method="POST" onsubmit="return validateForm()" novalidate>
         <div class="form-group">
-            <label for="InputFirstName">First Name</label>
-            <input type="text" class="form-control form-control-lg" id="InputFirstName" name="InputFirstName"
-                   placeholder="Enter first name" value="">
+            <label for="inputEmail">Email address</label>
+            <input type="email" class="form-control" id="inputEmail" name="inputEmail" required>
         </div>
-
         <div class="form-group">
-            <label for="InputLastName">Last Name</label>
-            <input type="text" class="form-control form-control-lg" id="InputLastName" name="InputLastName"
-                   placeholder="Enter last name" value="">
+            <label for="inputPassword">Password</label>
+            <input type="password" class="form-control" id="inputPassword" name="inputPassword" required>
         </div>
-
-        <div class="form-group">
-            <label for="InputEmail">Email address</label>
-            <input type="email" class="form-control form-control-lg" id="InputEmail" name="InputEmail"
-                   placeholder="Enter email here" value="">
-            <div class="invalid-feedback">
-                A valid email address is required!
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="InputPassword">Password</label>
-            <input type="password" class="form-control form-control-lg" id="InputPassword" name="InputPassword"
-                   placeholder="Enter password" value="">
-        </div>
-
-        <div class="form-group">
-            <label for="InputConfirmPassword">Confirm Password</label>
-            <input type="password" class="form-control form-control-lg" id="InputConfirmPassword"
-                   name="InputConfirmPassword" placeholder="Confirm password" value="">
-        </div>
-
-        <button type="submit" class="btn btn-primary">Sign Up</button>
+        <button type="submit" class="btn btn-primary">Login</button>
     </form>
 
-    <p id="sing-in">Already have an account? <a href="login.php">Log in</a></p>
+    <p id="sing-in">Don't have an account? <a href="register.php">Sign up</a></p>
 
     <!-- JavaScript for custom form validation -->
     <script>
         function validateForm() {
-            var firstName = document.getElementById("InputFirstName").value;
-            var lastName = document.getElementById("InputLastName").value;
-            var email = document.getElementById("InputEmail").value;
-            var password = document.getElementById("InputPassword").value;
-            var confirmPassword = document.getElementById("InputConfirmPassword").value;
+            var email = document.getElementById("inputEmail").value;
+            var password = document.getElementById("inputPassword").value;
 
-            // Validation rules
-            var nameRegex = /^[a-zA-Z]+$/;
-            var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-            var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
-
-            // Validate first name
-            if (!nameRegex.test(firstName) || firstName.length > 20) {
-                alert("First name is invalid or too long (max 20 characters).");
+            if (email === "" || password === "" || email.isEmpty() || password.isEmpty()) {
+                alert("All the fields must me filled in");
                 return false;
             }
-
-            // Validate last name
-            if (!nameRegex.test(lastName) || lastName.length > 20) {
-                alert("Last name is invalid or too long (max 20 characters).");
-                return false;
-            }
-
-            // Validate email address
-            if (!emailRegex.test(email)) {
-                alert("Email address is invalid.");
-                return false;
-            }
-
-            // Validate password match
-            if (password !== confirmPassword) {
-                alert("Passwords do not match.");
-                return false;
-            }
-
-            // Validate password complexity
-            if (!passwordRegex.test(password)) {
-                alert("Password must meet organizational guidelines.");
-                return false;
-            }
-
             return true;
         }
     </script>
@@ -178,10 +119,10 @@
 </footer>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
         let referrer = document.referrer;
-        if (referrer.endsWith("/sign_up_process.php")) {
-            alert("Sorry, an account with this email already exists. Please use a different email or sign in.");
+        if (referrer.endsWith("/login_process.php")) {
+            alert("Invalid credentials");
         }
     });
 </script>
