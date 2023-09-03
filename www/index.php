@@ -149,32 +149,32 @@ if (!isset($_SESSION['user_email']) || empty($_SESSION['user_email'])) {
             </p>
         </section>
     </div>
-
-    <!-- Footer -->
-    <footer class="text-white text-center"
-            style="background-color: #434152; color: #fefefe; margin: 20px auto 0; padding: 20px 0 0">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <ul class="list-unstyled">
-                        <li><a href="terms_and_conditions.html">Terms of Service</a></li>
-                        <li><a href="faq.html">FAQs</a></li>
-                        <li><a href="help.html">Help Center</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <ul class="list-unstyled">
-                        <li><a href="https://www.facebook.com/breedableboy/">Facebook</a></li>
-                        <li><a href="https://www.instagram.com/breedable.boy/">Instagram</a></li>
-                        <li><a href="https://www.linkedin.com/vishchak/">LinkedIn</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 d-flex justify-content-center align-items-center">
-                    <p>&copy; 2023 Australian library. All Rights Reserved.</p>
-                </div>
-
+</div>
+<!-- Footer -->
+<footer class="text-white text-center"
+        style="background-color: #434152; color: #fefefe; margin: 20px auto 0; padding: 20px 0 0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <ul class="list-unstyled">
+                    <li><a href="terms_and_conditions.html">Terms of Service</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="help.html">Help Center</a></li>
+                </ul>
             </div>
+            <div class="col-lg-4 col-md-6">
+                <ul class="list-unstyled">
+                    <li><a href="https://www.facebook.com/breedableboy/">Facebook</a></li>
+                    <li><a href="https://www.instagram.com/breedable.boy/">Instagram</a></li>
+                    <li><a href="https://www.linkedin.com/vishchak/">LinkedIn</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 d-flex justify-content-center align-items-center">
+                <p>&copy; 2023 Australian library. All Rights Reserved.</p>
+            </div>
+
         </div>
-    </footer>
+    </div>
+</footer>
 </body>
 </html>
