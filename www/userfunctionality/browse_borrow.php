@@ -55,7 +55,6 @@ if (!isset($_SESSION['user_email']) || empty($_SESSION['user_email'])) {
                     echo '<li class="nav-item"><a class="nav-link" href="../adminfunctionality/admin.php">Admin</a></li>';
                 }
                 ?>
-                </li>
             </ul>
         </div>
     </nav>
@@ -99,12 +98,12 @@ if (!isset($_SESSION['user_email']) || empty($_SESSION['user_email'])) {
 
             if ($book['Status'] == 'Onloan') {
                 echo '<p>Borrowed Date: ' . $book['AppliedDate'] . '</p>';
-                echo '<button class="btn btn-secondary mt-auto" disabled>Borrow</button>';
+                echo '<button class="btn btn-secondary btn-block mt-auto" disabled>Borrow</button>';
             } else {
                 echo '<div class="mt-auto">';
                 echo '<form method="post" action="borrow.php" class="d-flex" >';
                 echo '<input type="hidden" name="bookID" value="' . $book['BookID'] . '">';
-                echo '<button class="btn btn-primary" type="submit" >Borrow</button>';
+                echo '<button class="btn btn-primary btn-block" style="margin-bottom: 0.5em" type="submit">Borrow</button>';
                 echo '</form>';
                 echo '</div>';
             }
