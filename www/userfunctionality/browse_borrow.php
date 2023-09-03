@@ -56,7 +56,7 @@ if (!isset($_SESSION['user_email']) || empty($_SESSION['user_email'])) {
                 }
                 ?>
                 <li class="nav-item ">
-                    <a class="nav-link" href="logout.php">Logout</a>
+                    <a class="nav-link" href="../logout.php">Logout</a>
                 </li>
             </ul>
         </div>
