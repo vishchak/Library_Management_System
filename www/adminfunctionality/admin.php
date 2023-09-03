@@ -107,6 +107,11 @@ if (!isset($_SESSION['user_email']) || empty($_SESSION['user_email']) || $_SESSI
 
             echo '<a href="edit.php?bookID=' . $book['BookID'] . '" class="btn btn-info btn-block">Edit</a>';
 
+            echo '<form method="post" action="delete.php" class="d-flex" >';
+            echo '<input type="hidden" name="bookID" value="' . $book['BookID'] . '">';
+            echo '<button class="btn btn-danger btn-block" style="margin-top: 0.5em" type="submit">Delete</button>';
+            echo '</form>';
+
             echo '</div>';
             echo '</div>';
             echo '</div>';
