@@ -28,7 +28,7 @@ Before you begin, make sure you have the following prerequisites:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/library-management-system.git
+   git clone https://github.com/vishchak/library_management_system.git
    cd library-management-system
 
 2. Create a MySQL database and import the SQL schema from the database.sql file.
