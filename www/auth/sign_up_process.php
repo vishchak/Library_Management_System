@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION['user_type'] = $memberType;
             $_SESSION['session_expire'] = time() + 7200; // 2 hours in seconds
 
-            header("Location: index.html");
+            header("Location: ../index.php");
         } else {
             $stmt->close();
             $_SESSION['error_message'] = "Error registering user: " . $conn->error;

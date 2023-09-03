@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $_SESSION['session_expire'] = time() + 7200; // 2 hours in seconds
 
         // Redirect to home page
-        header("Location: index.html");
+        header("Location: ../index.php");
     } else {
         // Invalid login credentials
         $_SESSION['error_message'] = "Invalid email or password. Please try again.";

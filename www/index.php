@@ -39,7 +39,7 @@ if (!isset($_SESSION['user_email']) || empty($_SESSION['user_email'])) {
 
 <div class="container" style="margin: 20px auto">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.html">Home</a>
+        <a class="navbar-brand" href="index.php">Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -47,12 +47,12 @@ if (!isset($_SESSION['user_email']) || empty($_SESSION['user_email'])) {
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="browse_borrow.php">Catalog <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="userfunctionality/browse_borrow.php">Catalog <span class="sr-only">(current)</span></a>
                 </li>
                 <?php
                 // Check if the user is an admin (MemberType equals "Admin")
                 if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 'Admin') {
-                    echo '<li class="nav-item"><a class="nav-link" href="../adminfunctionality/admin.php">Admin</a></li>';
+                    echo '<li class="nav-item"><a class="nav-link" href="adminfunctionality/admin.php">Admin</a></li>';
                 }
                 ?>
             </ul>
