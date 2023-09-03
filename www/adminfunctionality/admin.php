@@ -94,25 +94,24 @@ if (!isset($_SESSION['user_email']) || empty($_SESSION['user_email']) || $_SESSI
             echo '<p>Category: ' . $book['Category'] . '</p>';
 
             if ($book['Status'] !== 'Onloan') {
-                echo '<button class="btn btn-secondary mt-auto" disabled>Return</button>';
+                echo '<button class="btn btn-secondary btn-block mt-auto" disabled>Return</button>';
             } else {
                 echo '<p>Borrowed Date: ' . $book['AppliedDate'] . '</p>';
                 echo '<div class="mt-auto">';
                 echo '<form method="post" action="return.php" class="d-flex" >';
                 echo '<input type="hidden" name="bookID" value="' . $book['BookID'] . '">';
-                echo '<button class="btn btn-primary" type="submit" >Return</button>';
+                echo '<button class="btn btn-primary btn-block" style="margin-bottom: 0.5em" type="submit">Return</button>';
                 echo '</form>';
                 echo '</div>';
             }
 
-            echo '<div class="mt-auto">';
-            echo '<a href="edit.php?bookID=' . $book['BookID'] . '" class="btn btn-info">Edit</a>';
-            echo '</div>';
+            echo '<a href="edit.php?bookID=' . $book['BookID'] . '" class="btn btn-info btn-block">Edit</a>';
 
             echo '</div>';
             echo '</div>';
             echo '</div>';
         }
+
 
         ?>
     </div>
