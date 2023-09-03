@@ -1,0 +1,19 @@
+footer a{
+    color: #fefefe;
+}
+
+footer a:hover {
+    color: white;
+    text-decoration: none;
+    background-color: #007bff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+footer ul{
+    line-height: 2em;
+}
+
+#sing-in{
+    margin: 10px 0;
+}

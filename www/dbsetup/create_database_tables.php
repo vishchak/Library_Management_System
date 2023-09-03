@@ -1,5 +1,5 @@
 <?php
-require_once("connection.php");
+require_once("../sheared/connection.php");
 
 $dbname = "library_db";
 
