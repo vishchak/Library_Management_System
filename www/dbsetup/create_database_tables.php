@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS BookStatus (
     MemberID INT,
     Status ENUM('Available', 'Onloan', 'Deleted') NOT NULL DEFAULT 'Available',
     AppliedDate DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (BookID) REFERENCES Books(BookID),
+    FOREIGN KEY (BookID) REFERENCES Books(BookID) ON DELETE CASCADE,
     FOREIGN KEY (MemberID) REFERENCES Users(UserID)
 );
 ";

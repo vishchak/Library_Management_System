@@ -4,7 +4,7 @@ session_start();
 
 // Check if the user is not logged in, redirect to login page
 if (!isset($_SESSION['user_email']) || empty($_SESSION['user_email'])) {
-    header("Location: ../auth/login.php");
+    header("Location: ../www/auth/login.php");
     exit();
 } ?>
 
@@ -39,7 +39,7 @@ if (!isset($_SESSION['user_email']) || empty($_SESSION['user_email'])) {
 
 <div class="container" style="margin: 20px auto">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.php">Home</a>
+        <a class="navbar-brand" href="../www/index.php">Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

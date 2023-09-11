@@ -101,7 +101,7 @@ if (!isset($_SESSION['user_email']) || empty($_SESSION['user_email'])) {
 
             if ($book['Status'] == 'Onloan') {
                 echo '<p>Borrowed Date: ' . $book['AppliedDate'] . '</p>';
-                echo '<button class="btn btn-secondary btn-block mt-auto" disabled>Borrow</button>';
+                echo '<button class="btn btn-secondary btn-block mt-auto" disabled>Loaned</button>';
             } else {
                 echo '<div class="mt-auto">';
                 echo '<form method="post" action="borrow.php" class="d-flex" >';
